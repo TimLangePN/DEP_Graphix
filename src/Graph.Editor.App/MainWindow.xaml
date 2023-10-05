@@ -3,10 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Graph.Editor.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1000">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Drawing Canvas -->
+        <Canvas Grid.Column="0" Name="drawArea">
+            <Canvas.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <!-- Grid for non-drawable controls -->
+        <Grid Grid.Column="1" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Content="Change Brush Color" Click="ChanceBrushColorEvent" Width="150" Height="30" Margin="10,23,10,10"/>
+
+            <Label Margin="65,66,65,-25">Shapes</Label>
+
+            <ComboBox Canvas.Left="10" Canvas.Top="71" Width="120" Name="ShapesBox" Margin="30,97,30,-52">
+                <ComboBoxItem>Ellipse</ComboBoxItem>
+                <ComboBoxItem>Square</ComboBoxItem>
+            </ComboBox>
+        </Grid>
     </Grid>
 </Window>
