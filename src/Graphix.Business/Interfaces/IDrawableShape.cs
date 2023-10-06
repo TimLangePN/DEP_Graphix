@@ -2,10 +2,10 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Graph.Editor.Business.Interfaces;
+namespace Graphix.Business.Interfaces;
 
 public interface IDrawableShape
 {
-    UIElement Create(Point startPoint, Brush stroke);
+    UIElement SetShapeElement(Point startPoint, Brush stroke);
     void Draw(UIElement shape, Point currentPoint, Canvas canvas);
 }
